@@ -3,11 +3,21 @@ import React from 'react';
 import WeatherCondition from './WeatherCondition';
 import WeatherForecast from './WeatherForecast';
 
-function Main() {
+function Main(props) {
 	return (
 		<main>
-			<WeatherCondition />
-			<WeatherForecast />
+			<WeatherCondition
+				cityName = {props.cityName}
+				current = {props.current}
+				unit = {props.unit}
+			/>
+			<WeatherForecast 
+				unit = {props.unit}
+				forecasts = {props.forecasts}
+				limit = {props.limit}
+				handleChangeLimit = {props.handleChangeLimit}
+			
+			/>
 		</main>
 	);
 }
